@@ -67,7 +67,7 @@ class DotsOCRParser:
         model_path = "./weights/DotsOCR"
         self.model = AutoModelForCausalLM.from_pretrained(
             model_path,
-            attn_implementation="flash_attention_2",
+            attn_implementation="eager",
             torch_dtype=torch.bfloat16,
             device_map="auto",
             trust_remote_code=True
